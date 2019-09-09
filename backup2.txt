@@ -1,0 +1,10 @@
+export class ProductListComponent implements OnInit{
+
+
+import { Component, OnInit } from "@angular/core";
+
+  ngOnInit() :void{
+    console.log('ngOnInIt called')
+  }
+
+  

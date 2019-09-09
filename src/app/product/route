@@ -1,0 +1,54 @@
+//
+ng g c product/product-detail --flat
+
+//product detail html
+<div class='card'
+     *ngIf='product'>
+  <div class='card-header'>
+    {{pageTitle + ': ' + product.productName}}
+  </div>
+
+
+// component
+import { IProduct } from './product';
+
+
+  pageTitle = 'Product Detail';
+  product: IProduct;
+
+  //remove selector
+
+  ///IMport welcome component
+
+//app module ts - import routes
+import { RouterModule } from '@angular/router';
+RouterModule // add it imports array
+
+// configure routes in app module ts
+RouterModule.forRoot()
+[
+      { path: 'products', component: ProductListComponent },
+      { path: 'products/:id', component: ProductDetailComponent },
+      { path: 'welcome', component: WelcomeComponent },
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+      { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
+    ]
+
+  // App component ts
+      <nav class='navbar navbar-expand navbar-light bg-light'>
+        <a class='navbar-brand'>{{pageTitle}}</a>
+        <ul class='nav nav-pills'>
+          <li><a class='nav-link'>Home</a></li>
+          <li><a class='nav-link'>Product List</a></li>
+        </ul>
+    </nav>
+
+            <li><a class='nav-link' [routerLink]="['/welcome']">Home</a></li>
+          <li><a class='nav-link' [routerLink]="['/products']">Product List</a></li>
+
+              <div class='container'>
+      <router-outlet></router-outlet>
+    </div>
+
+    // product list component ts
+    comment selector
